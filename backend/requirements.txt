@@ -1,0 +1,13 @@
+flask_restful==0.3.10
+Jinja2==3.1.2
+Flask==2.2.2
+Flask_Caching==2.0.1
+Flask_Cors==3.0.10
+Flask_JWT_Extended==4.4.4
+Flask_SQLAlchemy==2.5.1
+bcrypt==4.0.1
+SQLAlchemy==1.4.41
+redis==4.6.0
+celery==5.2.7
+requests==2.31.0
+gevent==23.7.0
