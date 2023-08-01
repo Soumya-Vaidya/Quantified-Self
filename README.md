@@ -13,45 +13,55 @@ To run the project on your local machine, please follow these steps:
 3. Run the following command to install all the required dependencies:
 
 
-```
-npm install
-```
+### Backend Setup
 
-4. Run the following command to compile and hot-reload for development:
+1. Open terminal 
+```
+cd backend
+pip install -r requirements.txt
 
 ```
-npm run serve
-```
-5. Open another terminal and navigate to the src directory.
-6. Run the following command to start the Flask server:
+2. Run the following command to start the Flask server:
 
 ```
 python app.py
 ```
-
-7. Open another terminal and navigate to the src directory.
-8. Run the following command to start the Celery worker:
-
-```
-celery -A tasks.celery worker -P gevent -l INFO
-```
-9. Open another terminal and navigate to the src directory.
-10. Run the following command to start the Celery beat:
-css
-
-```
-celery -A tasks.celery beat --max-interval 1 -l INFO
-```
-
-11. Make sure you have Redis installed and running. If not, run the following command:
+3. Make sure you have Redis installed and running. If not, run the following command:
 
 ```
 redis-server
 ```
 
-12. Make sure you have MailHog installed and running. If not, open the MailHog application to receive emails.
+4. Run the following command to start the Celery worker:
 
-13. Visit http://localhost:8080/ in your browser to access the app.
+```
+celery -A tasks.celery worker -P gevent -l INFO
+```
+
+5. Run the following command to start the Celery beat:
+
+```
+celery -A tasks.celery beat --max-interval 1 -l INFO
+```
+
+6. Make sure you have MailHog installed and running. If not, open the MailHog application to receive emails.
+
+
+### Frontend Setup
+
+1. Open terminal
+```
+cd frontend
+npm install
+```
+
+2. Run the following command to compile and hot-reload for development:
+
+```
+npm run serve
+```
+
+13. Visit http://localhost:8000/ in your browser to access the app.
 
 ## Features
 Quantified Self has the following features:
