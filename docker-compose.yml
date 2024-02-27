@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile-flask
     image: qself
     ports:
-      - "8000:8000"
+      - "4000:8000"
     environment:
       - VIRTUAL_HOST=api.qself.soumyavaidya.me
       - VIRTUAL_PORT=5000
