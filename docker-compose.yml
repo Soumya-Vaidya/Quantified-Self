@@ -18,7 +18,7 @@ services:
     image: vue-build
     build:
       context: ./frontend
-      dockerfile: Dockerfile-react
+      dockerfile: Dockerfile-vue
     environment:
       - VIRTUAL_HOST=qself.soumyavaidya.me
       - LETSENCRYPT_HOST=qself.soumyavaidya.me
