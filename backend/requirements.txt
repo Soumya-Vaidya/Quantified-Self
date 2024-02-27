@@ -13,3 +13,4 @@ requests==2.31.0
 gevent==23.7.0
 gunicorn
 Werkzeug==2.2.2
+pandas
