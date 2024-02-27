@@ -14,7 +14,7 @@ services:
     network_mode: bridge
 
   vue-frontend:
-    image: vue-build
+    image: qself-frontend
     build:
       context: ./frontend
       dockerfile: Dockerfile-vue
