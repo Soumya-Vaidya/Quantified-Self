@@ -1,0 +1,20 @@
+# Use an official Nginx runtime as a base image
+FROM nginx:latest
+
+# Set the working directory inside the container
+WORKDIR /usr/share/nginx/html
+
+# Remove the default Nginx welcome page
+RUN rm -rf ./*
+
+# Copy the contents of the 'dist' folder (built Vue app) into the container
+COPY ./dist/ .
+
+# Copy the Nginx configuration file into the container
+# COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+# Expose port 80 to the outside world
+# EXPOSE 80
+
+# Start Nginx when the container is started
+CMD ["nginx", "-g", "daemon off;"]

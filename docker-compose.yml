@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  flask-api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile-flask
+    image: qself
+    ports:
+      - "5000:5000"
+    environment:
+      - VIRTUAL_HOST=api.qself.soumyavaidya.me
+      - VIRTUAL_PORT=5000
+      - LETSENCRYPT_HOST=api.qself.soumyavaidya.me
+    network_mode: bridge
+    env_file:
+      - .env
+
+  vue-frontend:
+    image: vue-build
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile-react
+    environment:
+      - VIRTUAL_HOST=qself.soumyavaidya.me
+      - LETSENCRYPT_HOST=qself.soumyavaidya.me
+    network_mode: bridge
+    env_file:
+      - .env

@@ -1,0 +1,19 @@
+FROM python:3
+
+# Install Redis server
+RUN apt-get update && apt-get install -y redis-server
+
+# Set the working directory
+WORKDIR /q-self
+
+# Copy the application files
+COPY . /q-self/
+
+# Install Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Expose the port for Flask
+EXPOSE 8000
+
+# Start Redis and run the Flask application using Gunicorn
+CMD ["sh", "-c", "service redis-server start && gunicorn -b 0.0.0.0:8000 main:app"]
