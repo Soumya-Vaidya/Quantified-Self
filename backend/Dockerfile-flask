@@ -16,4 +16,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 8000
 
 # Start Redis and run the Flask application using Gunicorn
-CMD ["sh", "-c", "service redis-server start && gunicorn -b 0.0.0.0:8000 main:app"]
+CMD ["sh", "-c", "service redis-server start && gunicorn -b 0.0.0.0:8000 app:app"]
